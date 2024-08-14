@@ -42,10 +42,8 @@ func containsDuplicate(nums []int) bool {
 }
 
 /*
-*
 NOTE: another solution that is similar to the one above, but is slightly better. this uses a hashset where
 you map what is seen already and if it already exists in the set, then you just return true otherwise it's false.
-*
 */
 func containsDuplicate2(nums []int) bool {
 	seen := make(map[int]struct{})
@@ -60,12 +58,8 @@ func containsDuplicate2(nums []int) bool {
 }
 
 /*
-*
-
-	NOTE: another example from another leetcode submitter thats just way smarter imo and has less boiler plate,
-
+NOTE: another example from another leetcode submitter thats just way smarter imo and has less boiler plate,
 adding it here because i think it's really cool the way they saw the problem
-*
 */
 func containsDuplicate3(nums []int) bool {
 	seen := make(map[int]bool)
