@@ -31,9 +31,25 @@ Constraints:
 Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
 */
 
+// this was a good attempt and a decent idea BUT the logic fails in the case of s = "aacc" and t = "ccac"
+// it's best to compare the frequency of each char from both s and t and then compare the maps to see if the values are the same.
 func isAnagram(s string, t string) bool {
-	seen := make(map[byte]bool)
-	sToChar := strings.Split(s, "")
+	if len(s) != len(t) {
+		return false
+	}
 
-	return false
+	seen := make(map[string]bool)
+	sToChar := strings.Split(s, "")
+	tToChar := strings.Split(t, "")
+
+	for _, sValues := range sToChar {
+		seen[sValues] = true
+	}
+	for _, tValues := range tToChar {
+		if !seen[tValues] {
+			return false
+		}
+	}
+
+	return true
 }
